@@ -53,7 +53,7 @@ docker compose -f infrastructure/docker-compose.yml up --build
 Each version tag (`v*`) publishes one combined image to GitHub Container Registry. It contains the API and the built web frontend, which the API serves itself. Run it with one command, without the source code:
 
 ```bash
-docker run -p 8080:8080 ghcr.io/hurtigrute-grand-prix/hurtigrute-grand-prix:latest
+docker run -p 8080:8080 ghcr.io/h189110/hurtigrute-grand-prix:latest
 ```
 
 Open `http://localhost:8080` for the leaderboard. The API is at `http://localhost:8080/api/ships`.
@@ -61,7 +61,7 @@ Open `http://localhost:8080` for the leaderboard. The API is at `http://localhos
 To run the release with compose and no source code, download the `docker-compose.yml` attached to the latest GitHub Release and start it:
 
 ```bash
-curl -L -o docker-compose.yml https://github.com/hurtigrute-grand-prix/hurtigrutenLeaderboard/releases/latest/download/docker-compose.yml
+curl -L -o docker-compose.yml https://github.com/h189110/hurtigruten_GrandPrix/releases/latest/download/docker-compose.yml
 docker compose -f docker-compose.yml up
 ```
 
