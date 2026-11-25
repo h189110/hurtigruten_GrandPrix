@@ -1,0 +1,90 @@
+[
+  {
+    "name": "MS Nordlys",
+    "imo": "9048914",
+    "mmsi": "259139000",
+    "sources": [
+      "https://www.cruisemapper.com/ships/MS-Nordlys-778",
+      "https://www.shipvault.com/ships/104074",
+      "https://www.vesselfinder.com/vessels/details/9048914",
+      "https://www.marinepublic.com/vessels/imo/9048914",
+      "https://www.marineradar.com/vessel/mmsi-259139000/nordlys",
+      "Kystverket real-time AIS GeoJSON (ship_name NORDLYS, mmsi 259139000, imo 9048914)"
+    ],
+    "identityVerified": true,
+    "aisDetected": true
+  },
+  {
+    "name": "MS Vesterålen",
+    "imo": "8019368",
+    "mmsi": "258478000",
+    "sources": [
+      "https://www.vesselfinder.com/vessels/details/8019368",
+      "https://www.shipspotting.com/photos/3373212",
+      "https://www.myshiptracking.com/vessels/vesteralen-mmsi-258478000-imo-8019368",
+      "https://en.wikipedia.org/wiki/MS_Vester%C3%A5len",
+      "Kystverket real-time AIS GeoJSON (ship_name VESTERALEN, mmsi 258478000, imo 8019368)"
+    ],
+    "identityVerified": true,
+    "aisDetected": true
+  },
+  {
+    "name": "MS Nordnorge",
+    "imo": "9107784",
+    "mmsi": "259371000",
+    "sources": [
+      "https://www.shipspotting.com/photos/3999871",
+      "https://en.wikipedia.org/wiki/MS_Nordnorge_(1996)",
+      "https://www.ferry-site.dk/ferry.php?id=9107784&lang=en",
+      "Kystverket real-time AIS GeoJSON (ship_name NORDNORGE, mmsi 259371000, imo 9107784)"
+    ],
+    "identityVerified": true,
+    "aisDetected": true
+  },
+  {
+    "name": "MS Richard With",
+    "imo": "9040429",
+    "mmsi": "258500000",
+    "sources": [
+      "https://www.vesseltrack.net/vessel/9040429",
+      "Kystverket real-time AIS GeoJSON (ship_name RICHARD WITH, mmsi 258500000, imo 9040429)"
+    ],
+    "identityVerified": false,
+    "aisDetected": true
+  },
+  {
+    "name": "MS Kong Harald",
+    "imo": "9039119",
+    "mmsi": "257200000",
+    "sources": [
+      "Kystverket real-time AIS GeoJSON (ship_name KONG HARALD, mmsi 257200000, imo 9039119)"
+    ],
+    "identityVerified": false,
+    "aisDetected": true
+  },
+  {
+    "name": "MS Polarlys",
+    "imo": "9107796",
+    "mmsi": "259322000",
+    "sources": [
+      "https://www.hurtigruten.com/en-us/on-board/ship-locator-map/ms-polarlys",
+      "https://www.vesselfinder.com/vessels/details/9107796",
+      "Kystverket real-time AIS GeoJSON (ship_name POLARLYS, mmsi 259322000, imo 9107796)"
+    ],
+    "identityVerified": true,
+    "aisDetected": true
+  },
+  {
+    "name": "MS Nordkapp",
+    "imo": "9107772",
+    "mmsi": "259330000",
+    "sources": [
+      "https://www.shiptraffic.net/current-position/NORDKAPP/9107772/259330000",
+      "https://www.vesselfinder.com/vessels/details/9107772",
+      "https://openwaters.io/ais/vessels/259330000-nordkapp",
+      "Kystverket real-time AIS GeoJSON (ship_name NORDKAPP, mmsi 259330000, imo 9107772)"
+    ],
+    "identityVerified": true,
+    "aisDetected": true
+  }
+]

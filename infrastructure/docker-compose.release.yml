@@ -1,0 +1,13 @@
+name: hurtigrute-grand-prix
+
+# Runs the published combined image only (API and web UI), no source code or local build needed.
+# Usage: docker compose -f docker-compose.release.yml up
+# Set GHCR_OWNER to the GitHub owner that published the image, and VERSION to a release tag.
+
+services:
+  app:
+    image: ghcr.io/${GHCR_OWNER:-hurtigrute-grand-prix}/hurtigrute-grand-prix:${VERSION:-latest}
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+    ports:
+      - "${APP_PORT:-5080}:8080"

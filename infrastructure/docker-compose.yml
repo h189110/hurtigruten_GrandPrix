@@ -1,0 +1,25 @@
+name: hurtigrute-grand-prix
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: backend/GrandPrix.Api/Dockerfile
+    image: hurtigrute-grand-prix-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+      Cors__AllowedOrigins__0: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    ports:
+      - "${API_PORT:-5080}:8080"
+
+  web:
+    build:
+      context: ..
+      dockerfile: frontend/grand-prix-web/Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:5080}
+    image: hurtigrute-grand-prix-web
+    depends_on:
+      - api
+    ports:
+      - "${WEB_PORT:-5173}:80"

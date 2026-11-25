@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Infrastructure/">
+    <File Path="infrastructure/docker-compose.yml" />
+  </Folder>
+  <Project Path="backend/GrandPrix.Api/GrandPrix.Api.csproj" />
+</Solution>

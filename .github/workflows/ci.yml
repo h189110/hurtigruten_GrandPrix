@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend (.NET 10)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore hurtigrutenLeaderboard.slnx
+
+      - name: Build solution
+        run: dotnet build hurtigrutenLeaderboard.slnx --no-restore -c Release
+
+      - name: Run tests
+        run: |
+          if [ -n "$(find . -name '*.csproj' \( -iname '*test*' \) -not -path './**/obj/*' -print -quit)" ]; then
+            dotnet test hurtigrutenLeaderboard.slnx --no-build -c Release
+          else
+            echo "No test project found, skipping tests."
+          fi
+        shell: bash
+
+  frontend:
+    name: Frontend (React + Vite)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend/grand-prix-web
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/grand-prix-web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript check
+        run: npm run typecheck
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Build production frontend
+        run: npm run build

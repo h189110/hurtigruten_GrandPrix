@@ -1,0 +1,34 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.9605, 69.64652],
+          [18.9605, 69.64652]
+        ]
+      },
+      "properties": {
+        "id": 4531,
+        "cog": 106.8,
+        "imo": 9039119,
+        "mmsi": 257200000,
+        "speed": 0.0,
+        "length": 122,
+        "status": 0,
+        "breadth": 20,
+        "draught": 5.5,
+        "callsign": "LGIY",
+        "maneuvre": 0,
+        "ais_class": "A",
+        "ship_name": "KONG HARALD",
+        "ship_type": 60,
+        "destination": "KIRKENES",
+        "true_heading": 41,
+        "date_time_utc": "2026-11-25T15:14:09"
+      }
+    }
+  ]
+}
