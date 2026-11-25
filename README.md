@@ -58,7 +58,14 @@ docker run -p 8080:8080 ghcr.io/hurtigrute-grand-prix/hurtigrute-grand-prix:late
 
 Open `http://localhost:8080` for the leaderboard. The API is at `http://localhost:8080/api/ships`.
 
-The `docker-compose.release.yml` file attached to each GitHub Release runs the same image with compose. Set `APP_PORT` to change the host port (default `5080`).
+To run the release with compose and no source code, download the `docker-compose.yml` attached to the latest GitHub Release and start it:
+
+```bash
+curl -L -o docker-compose.yml https://github.com/hurtigrute-grand-prix/hurtigrutenLeaderboard/releases/latest/download/docker-compose.yml
+docker compose -f docker-compose.yml up
+```
+
+The attached file is pinned to its release version. Set `APP_PORT` to change the host port (default `8080`).
 
 ## Local Development URLs
 

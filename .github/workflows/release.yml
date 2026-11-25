@@ -55,15 +55,25 @@ jobs:
           platforms: linux/amd64
           tags: |
             ghcr.io/${{ steps.meta.outputs.owner }}/hurtigrute-grand-prix:${{ steps.meta.outputs.version }}
-            ghcr.io/${{ steps.meta.outputs.owner }}/hurtigrute-grand-prix:latest
+            ${{ github.ref_type == 'tag' && format('ghcr.io/{0}/hurtigrute-grand-prix:latest', steps.meta.outputs.owner) || '' }}
+
+      - name: Build release compose file pinned to this version
+        if: github.ref_type == 'tag'
+        run: |
+          mkdir -p dist
+          sed -e "s|\${GHCR_OWNER:-hurtigrute-grand-prix}|${{ steps.meta.outputs.owner }}|g" \
+              -e "s|\${VERSION:-latest}|${GITHUB_REF_NAME}|g" \
+              infrastructure/docker-compose.release.yml > dist/docker-compose.yml
+          grep -n 'image:' dist/docker-compose.yml
+        shell: bash
 
       - name: Attach release compose file
         if: github.ref_type == 'tag'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${GITHUB_REF_NAME}" infrastructure/docker-compose.release.yml \
+          gh release create "${GITHUB_REF_NAME}" dist/docker-compose.yml \
             --title "${GITHUB_REF_NAME}" \
             --generate-notes \
-            || gh release upload "${GITHUB_REF_NAME}" infrastructure/docker-compose.release.yml --clobber
+            || gh release upload "${GITHUB_REF_NAME}" dist/docker-compose.yml --clobber
         shell: bash
